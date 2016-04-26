@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+  	<h1>Mostrando: {{ url }}</h1>
+	<form action="{{ '/labeler' }}" method=post>
+		{% for label in labels %}
+ 			<input type="radio" name="label_id" value="{{ label.id }}"> {{ label.desc }}
+ 		{% endfor %}
+ 		<input type="hidden" name="data_id" value="{{ id }}">
+		<input type=submit value=Set>
+	</form>
+
+ <iframe src="{{url}}" height = "700" width = "100%" ></iframe> 
+
+{% endblock %}
